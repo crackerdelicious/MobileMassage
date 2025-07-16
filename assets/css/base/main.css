@@ -8,8 +8,8 @@
  * 1. IMPORTS
  * Imports theme variables and reset/preflight styles.
  */
-@import url('/assets/css/base/_theme.css');
-@import url('/assets/css/base/_reset.css');
+@import url('../assets/css/base/_theme.css');
+@import url('../assets/css/base/_reset.css');
 
 /*
  * 2. UTILITIES
