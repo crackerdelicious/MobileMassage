@@ -3,7 +3,7 @@
    - Page-specific styles for the Login page.
    ========================================================================== */
 
-@import url('../css/base/main.css');
+@import url('./base/main.css');
 
 /* --- Social Login Buttons --- */
 .login__buttons {
