@@ -3,7 +3,7 @@
    - Page-specific styles for the Home page.
    ========================================================================== */
 
-@import url('./base/main.css');
+@import url('/assets/css/base/main.css');
 
 .home-page .card {
   margin-inline: var(--size-xl);
