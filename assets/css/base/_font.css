@@ -1,0 +1,83 @@
+@font-face {
+  font-family: 'Kodchasan';
+  src: url('/assets/fonts/kodchasan/Kodchasan-ExtraLight.ttf') format('truetype');
+  font-style: normal;
+  font-weight: 200;
+}
+
+@font-face {
+  font-family: 'Kodchasan';
+  src: url('/assets/fonts/kodchasan/Kodchasan-ExtraLightItalic.ttf') format('truetype');
+  font-style: italic;
+  font-weight: 200;
+}
+
+@font-face {
+  font-family: 'Kodchasan';
+  src: url('/assets/fonts/kodchasan/Kodchasan-Light.ttf') format('truetype');
+  font-style: normal;
+  font-weight: 300;
+}
+
+@font-face {
+  font-family: 'Kodchasan';
+  src: url('/assets/fonts/kodchasan/Kodchasan-LightItalic.ttf') format('truetype');
+  font-style: italic;
+  font-weight: 300;
+}
+
+@font-face {
+  font-family: 'Kodchasan';
+  src: url('/assets/fonts/kodchasan/Kodchasan-Regular.ttf') format('truetype');
+  font-style: normal;
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: 'Kodchasan';
+  src: url('/assets/fonts/kodchasan/Kodchasan-RegularItalic.ttf') format('truetype');
+  font-style: italic;
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: 'Kodchasan';
+  src: url('/assets/fonts/kodchasan/Kodchasan-Medium.ttf') format('truetype');
+  font-style: normal;
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: 'Kodchasan';
+  src: url('/assets/fonts/kodchasan/Kodchasan-MediumItalic.ttf') format('truetype');
+  font-style: italic;
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: 'Kodchasan';
+  src: url('/assets/fonts/kodchasan/Kodchasan-Semibold.ttf') format('truetype');
+  font-style: normal;
+  font-weight: 600;
+}
+
+@font-face {
+  font-family: 'Kodchasan';
+  src: url('/assets/fonts/kodchasan/Kodchasan-SemiboldItalic.ttf') format('truetype');
+  font-style: italic;
+  font-weight: 600;
+}
+
+@font-face {
+  font-family: 'Kodchasan';
+  src: url('/assets/fonts/kodchasan/Kodchasan-Bold.ttf') format('truetype');
+  font-style: normal;
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: 'Kodchasan';
+  src: url('/assets/fonts/kodchasan/Kodchasan-BoldItalic.ttf') format('truetype');
+  font-style: italic;
+  font-weight: 700;
+}

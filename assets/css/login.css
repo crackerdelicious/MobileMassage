@@ -1,0 +1,192 @@
+/* ==========================================================================
+   login.css
+   - Page-specific styles for the Login page.
+   ========================================================================== */
+
+@import url('./base/main.css');
+
+/* --- Social Login Buttons --- */
+.login__buttons {
+  display: flex;
+  flex-direction: column;
+  row-gap: var(--size-md);
+}
+
+.login__button {
+  /* Layout */
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  column-gap: var(--size-xs);
+  /* Box Model */
+  padding: var(--element-2xs);
+  border: none;
+  border-radius: var(--size-2xs);
+  /* Typography */
+  font-size: var(--side-md);
+  /* Visual */
+  background-color: var(--color-light);
+  box-shadow: var(--shadow-sm);
+  /* Interaction */
+  cursor: pointer;
+}
+
+/* --- Authentication Form --- */
+.auth-form {
+  /* Layout */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: var(--size-md);
+  /* Box Model */
+  width: 100%;
+  /* Typography */
+  font-size: calc(var(--size-xl) / 3);
+}
+
+.auth-form p {
+  /* Box Model */
+  padding-top: var(--size-sm);
+  /* Typography */
+  font-size: var(--side-md);
+  text-align: center;
+}
+
+.auth-form label,
+.auth-form__info {
+  color: var(--color-gray);
+}
+
+.auth-form__email,
+.auth-form__password {
+  position: relative;
+  width: 100%; /* Ensure inputs take full width of form */
+}
+
+.auth-form__email label,
+.auth-form__password label {
+  /* Positioning */
+  position: absolute;
+  top: -10px;
+  left: 6px;
+  /* Box Model */
+  padding-inline: var(--size-2xs);
+  /* Visual - Prevents label from inheriting parent background */
+  background-color: var(--color-secondary); /* Assuming card bg */
+}
+
+/* DRY Principle: Shared styles for inputs and the submit button */
+.auth-form__email input,
+.auth-form__password input,
+.auth-form__submit button {
+  width: 100%;
+  padding: var(--element-2xs);
+  border-radius: var(--size-xs);
+  font-size: var(--size-md);
+}
+
+.auth-form__email input,
+.auth-form__password input {
+  border: none;
+  background-color: var(--color-light);
+  box-shadow: var(--shadow-sm);
+}
+
+.auth-form__info {
+  /* Layout */
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  column-gap: var(--size-2xl);
+  /* Box Model */
+  margin-top: -12px;
+  width: 100%;
+}
+
+.auth-form__remember {
+  /* Layout */
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  column-gap: var(--size-2xs);
+}
+
+.auth-form__forget-password a {
+  /* Box Model */
+  padding-right: 4px;
+  /* Interaction */
+  cursor: pointer;
+}
+
+.auth-form__submit {
+  /* Box Model */
+  width: 100%;
+  margin-bottom: var(--size-sm);
+}
+
+.auth-form__submit button {
+  /* Box Model */
+  border: 1px solid var(--color-secondary);
+  /* Typography */
+  color: var(--color-secondary);
+  /* Visual */
+  background-color: var(--color-primary);
+  /* Interaction & Animation */
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out,
+    border-color 0.3s ease-in-out;
+}
+
+@media (hover: hover) {
+  .auth-form__submit button:hover {
+    border: 1px solid var(--color-primary);
+    color: var(--color-primary);
+    background-color: var(--color-secondary);
+  }
+}
+
+/* ==========================================================================
+   MEDIA QUERIES
+   ========================================================================== */
+@media (min-width: 768px) {
+  .login-page .card__body {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    column-gap: var(--size-md);
+  }
+
+  .login-page .card__body .auth-form {
+    width: auto; /* Revert to natural width */
+  }
+
+  .login-page .card__body .login__buttons {
+    margin-bottom: calc(var(--size-md) * 5 );
+  }
+
+  .login-page .card__body p {
+    display: none;
+  }
+
+  .login-page .auth-form {
+    border-right: 0.5px solid var(--color-gray);
+    padding-right: var(--size-md);
+  }
+
+  .login-page .auth-form__submit {
+    margin-bottom: 0;
+  }
+  
+  .login-page .content {
+    padding-top: var(--size-4xl);
+    row-gap: var(--size-md);
+  }
+}
+
+/* Large devices (lg) */
+@media (min-width: 960px)  {
+  .login-page .content {
+    padding-inline: 0;
+    row-gap: 0;
+  }
+}

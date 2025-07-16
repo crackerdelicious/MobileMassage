@@ -1,0 +1,96 @@
+/* ==========================================================================
+   home.css
+   - Page-specific styles for the Home page.
+   ========================================================================== */
+
+@import url('./base/main.css');
+
+.home-page .card {
+  margin-inline: var(--size-xl);
+}
+
+.list-btn {
+  /* Layout */
+  display: flex;
+  flex-flow: wrap; /* Combines flex-direction and flex-wrap */
+  justify-content: center;
+  gap: var(--size-sm);
+}
+
+.list-btn__item {
+  /* Box Model */
+  width: var(--element-5xl);
+  height: var(--element-5xl);
+  border-radius: var(--size-sm);
+  /* Visual */
+  background-color: var(--color-light);
+  box-shadow: var(--shadow-sm);
+  /* Interaction */
+  cursor: pointer;
+}
+
+.list-btn__item:active {
+  transform: translateY(1px);
+}
+
+/* DRY Principle: Grouping common layout styles */
+.home-page .card__body,
+.list-btn__item,
+.list-btn__item a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.list-btn__item a {
+  /* Layout */
+  flex-direction: column;
+  /* Box Model */
+  width: 100%;
+  height: 100%;
+}
+
+.list-btn--title {
+  font-weight: 700;
+}
+
+/* Style modifier for a specific button type */
+.list-btn__item.assignment {
+  color: var(--color-secondary);
+  background-color: var(--color-success);
+}
+
+.list-btn__item svg {
+  /* Layout */
+  z-index: 1; /* Simpler z-index is fine */
+  /* Box Model */
+  width: calc(var(--element-5xl) / 1.5);
+  height: calc(var(--element-5xl) / 1.5);
+}
+
+/* ==========================================================================
+   MEDIA QUERIES
+   ========================================================================== */
+
+@media (min-width: 576px) {
+  .list-btn {
+    gap: var(--size-md);
+  }
+}
+
+/* Medium devices (md) */
+@media (min-width: 768px) {
+  .home-page .content {
+    padding-inline: calc(var(--element-3xl) * 3);
+    padding-top: var(--size-4xl);
+    row-gap: var(--size-md);
+  }
+}
+
+/* Large devices (lg) */
+@media (min-width: 960px)  {
+  .home-page .content {
+    padding-inline: 0;
+    row-gap: 0;
+  }
+}

@@ -1,0 +1,150 @@
+/*
+  1. Use a more intuitive box model.
+*/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/*
+  2. Remove default margin and padding.
+*/
+:where(body, h1, h2, h3, h4, h5, h6, p, ul, ol, dl, blockquote, figure, pre) {
+  margin: 0;
+}
+
+:where(ul, ol) {
+  padding: 0;
+  list-style: none;
+}
+
+/*
+  3. Set core root defaults.
+*/
+html {
+  line-height: 1.5;
+  -webkit-text-size-adjust: 100%;
+  -moz-tab-size: 4;
+  tab-size: 4;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  /* Change Root Element Here */
+  /* font-size: 16px; */
+}
+
+/*
+  4. Set core body defaults.
+*/
+body {
+  line-height: inherit;
+  min-height: 100vh;
+}
+
+/*
+  5. Make images and other media easier to work with.
+*/
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+/*
+  6. Inherit fonts for inputs and buttons.
+*/
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/*
+  7. Remove all animations and transitions for people that prefer not to see them.
+*/
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/*
+  8. Reset heading styles.
+*/
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+/*
+  9. A more modern anchor reset.
+*/
+a {
+  color: inherit;
+  text-decoration: inherit;
+}
+
+/*
+  10. Sensible form control defaults.
+*/
+textarea {
+  resize: vertical;
+}
+
+button,
+[role='button'] {
+  cursor: pointer;
+}
+
+/*
+  11. Improve readability of focused elements.
+*/
+:focus-visible {
+  outline: 2px solid;
+  outline-offset: 2px;
+}
+
+/*
+  12. Basic table reset.
+*/
+table {
+  text-indent: 0;
+  border-color: inherit;
+  border-collapse: collapse;
+}
+
+/*
+  13. Monospace font stack.
+*/
+code,
+kbd,
+samp,
+pre {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+    'Liberation Mono', 'Courier New', monospace;
+  font-size: 1em;
+}
+
+/*
+  14. Hidden attribute.
+*/
+[hidden] {
+  display: none !important;
+}

@@ -1,0 +1,272 @@
+/* ==========================================================================
+   main.css
+   - Core styles for the entire application.
+   - Includes imports, utilities, and base component styles.
+   ========================================================================== */
+
+/*
+ * 1. IMPORTS
+ * Imports theme variables and reset/preflight styles.
+ */
+@import url('./_theme.css');
+@import url('./_reset.css');
+
+/*
+ * 2. UTILITIES
+ * Simple, reusable helper classes.
+ */
+.show {
+  display: block;
+}
+
+.hide {
+  display: none;
+}
+
+/*
+ * 3. BASE & LAYOUT
+ * Core styles for high-level page elements like body, main, header, footer.
+ */
+body {
+  /* Layout */
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  /* Typography */
+  font-family: 'Kodchasan';
+  font-weight: 400;
+  /* Visual */
+  background-color: var(--color-light);
+}
+
+main {
+  flex-grow: 1; /* Fills available vertical space */
+}
+
+header,
+footer {
+  /* Typography */
+  color: var(--color-secondary);
+  /* Visual */
+  background-color: var(--color-primary);
+}
+
+footer {
+  padding: var(--size-sm) 0;
+  font-size: var(--size-xs);
+  text-align: center;
+}
+
+/*
+ * 4. FORMS
+ * Base styles for form elements.
+ */
+input[type='checkbox'] {
+  /* Positioning & Box Model */
+  appearance: none;
+  width: var(--size-md);
+  height: var(--size-md);
+  border: 1px solid var(--checkbox-border-color);
+  border-radius: 50%;
+  /* Interaction & Animation */
+  transition: outline 0.1s;
+  cursor: pointer;
+}
+
+input[type='checkbox']:checked {
+  border-color: var(--checkbox-checked-color);
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="20" height="20" viewBox="0 0 32 32" xml:space="preserve"><path style="fill: %231c1917" d="M11.941,28.877l-11.941-11.942l5.695-5.696l6.246,6.246l14.364-14.364L32,8.818"/></svg>');
+  background-size: cover;
+}
+
+/* Add hover effects only for devices that support it */
+@media (hover: hover) {
+  input[type='checkbox']:not(:disabled):hover {
+    outline: 0.5px solid var(--checkbox-hover-color);
+    background-color: var(--checkbox-hover-color);
+    transform: scale(1);
+    transition: background-color 0.2s ease-in-out;
+  }
+}
+
+/* ==========================================================================
+   COMPONENTS
+   ========================================================================== */
+
+/*
+ * 5. NAVBAR
+ */
+.navbar {
+  /* Layout */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  /* Box Model */
+  padding: var(--size-sm);
+}
+
+.navbar--brand {
+  /* Layout */
+  display: flex;
+  align-items: center;
+  gap: var(--size-xs);
+}
+
+.navbar--title {
+  font-size: var(--size-sm);
+}
+
+.menus {
+  /* Layout */
+  display: flex;
+  column-gap: var(--size-md);
+}
+
+.menus__item:nth-last-child(1) {
+  padding-left: var(--size-sm);
+  border-left: 0.5px solid var(--color-light);  
+}
+
+
+.menus__item a {
+  display: flex;
+}
+
+.menus__item--title {
+  /* Layout - Initially hidden, shown on larger screens */
+  display: none;
+  place-content: center;
+  /* Box Model */
+  margin-inline: var(--size-xs);
+  /* Typography */
+  font-size: var(--size-sm);
+}
+
+.auth-button {
+  /* Box Model */
+  padding: calc(var(--element-3xs) / 2) var(--element-md);
+  border: 1px solid var(--color-primary);
+  border-radius: var(--size-xl);
+  /* Typography */
+  font-size: var(--size-sm);
+  color: var(--color-primary);
+  /* Visual */
+  background-color: var(--color-secondary);
+  /* Interaction & Animation */
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out,
+    border-color 0.3s ease-in-out;
+}
+
+@media (hover: hover) {
+  .auth-button:hover {
+    border: 1px solid var(--color-secondary);
+    color: var(--color-secondary);
+    background-color: var(--color-primary);
+  }
+}
+
+/*
+ * 6. CONTENT & CARDS
+ */
+.content {
+  /* Layout */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.content .banner {
+  /* Layout */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: var(--size-sm);
+  /* Box Model */
+  padding-block: var(--size-lg);
+}
+
+.content .banner--title {
+  font-size: var(--size-xl);
+}
+
+.card {
+  /* Layout */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: var(--size-2xs);
+  /* Box Model */
+  max-width: fit-content;
+  padding: var(--element-md);
+  border-radius: var(--size-md);
+  /* Visual */
+  background-color: var(--color-secondary);
+  box-shadow: var(--shadow-md);
+}
+
+.card__header {
+  /* Box Model */
+  width: 100%; /* Ensures it fills card width for centering */
+  padding-bottom: var(--size-sm);
+}
+
+.card__title {
+  /* Typography */
+  font-size: var(--size-lg);
+  text-align: center;
+}
+
+.card__body {
+  /* Layout */
+  flex-grow: 1; /* Allows body to fill space if needed */
+  /* Box Model */
+  min-height: var(--size-3xl);
+  /* Typography */
+  font-size: var(--size-md);
+}
+
+/* ==========================================================================
+   MEDIA QUERIES (Mobile First)
+   ========================================================================== */
+
+/* Small devices (sm) */
+@media (min-width: 576px) {
+  .navbar {
+    margin-inline: var(--size-3xl);
+  }
+  .menus {
+    gap: var(--size-lg);
+  }
+}
+
+/* Medium devices (md) */
+@media (min-width: 768px) {
+  .card {
+    min-width: fit-content;
+    max-width: 640px;
+    min-height: fit-content;
+  }
+}
+
+/* Large devices (lg) */
+@media (min-width: 960px)  {
+  .navbar--title,
+  .menus__item--title {
+    font-size: var(--size-md);
+  }
+  .menus__item--title {
+    display: flex;
+    align-items: end;
+  }
+}
+
+/* Extra large devices (xl) */
+@media (min-width: 1152px) {
+  .navbar {
+    margin-inline: calc(var(--size-3xl) * 4);
+  }
+  .menus__item--title {
+    display: block; /* Show menu item titles */
+  }
+}
